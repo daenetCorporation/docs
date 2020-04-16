@@ -100,7 +100,9 @@ To make a single prediction, you have to create a [`PredictionEngine`](xref:Micr
 
 The following link provides more information if you want to learn more about [dependency injection in ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.1).
 
-1. Open the *Startup.cs* class and add the following using statement to the top of the file:
+1. Add the package reference *Microsoft.Extensions.ML*
+
+2. Open the *Startup.cs* class and add the following using statement to the top of the file:
 
     ```csharp
     using Microsoft.AspNetCore.Builder;
@@ -112,7 +114,7 @@ The following link provides more information if you want to learn more about [de
     using SentimentAnalysisWebAPI.DataModels;
     ```
 
-2. Add the following code to the *ConfigureServices* method:
+3. Add the following code to the *ConfigureServices* method:
 
     ```csharp
     services.AddPredictionEnginePool<SentimentData, SentimentPrediction>()
